@@ -29,13 +29,13 @@
 <h1></h1>
 </body>
 <script>
-    let date = new Date();
     let setTime = () => {
         const content = document.querySelector("h1");
+        let date = new Date();
         let hour = date.getHours();
         let minute = date.getMinutes();
         let second = date.getSeconds();
-        content.innerText = `${hour > 12 ? hour / 2 : hour} : ${minute} : ${second} ${hour > 12 ? "PM" : "AM"}`;
+        content.innerText = `${hour > 12 ? hour - 12 : hour} : ${minute} : ${second} ${hour > 12 ? "PM" : "AM"}`;
     }
     setInterval(setTime, 1000)
 </script>
